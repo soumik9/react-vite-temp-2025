@@ -2,9 +2,9 @@ import React from 'react';
 
 const HomePage = () => {
     return (
-        <div style={{ color: 'red' }}>
+        <h1 className='text-4xl font-bold text-center'>
             Home
-        </div>
+        </h1>
     );
 };
 
