@@ -15,6 +15,10 @@ export default [
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
       },
+      env: {
+        node: true, // Add this line
+        es6: true,
+      },
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -28,6 +32,8 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'react/prop-types': 'off', // Disable prop-types validation
+      'react/forbid-prop-types': 'off', // Disable prop-types validation
     },
   },
 ]

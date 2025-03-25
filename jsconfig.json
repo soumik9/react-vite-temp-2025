@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@src/*": [
+        "*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@redux/*": [
+        "redux/*"
+      ],
+      "@libs/*": [
+        "libs/*"
+      ],
+      "@hooks/*": [
+        "libs/hooks/*"
+      ],
+      "@router/*": [
+        "libs/router/*"
+      ],
+      "@styles/*": [
+        "libs/styles/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
