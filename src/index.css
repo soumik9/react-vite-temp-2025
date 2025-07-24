@@ -3,3 +3,150 @@
   font-weight: 400;
 }
 
+/* index.css */
+.scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  /* border-radius: 3px; */
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* *datatable css */
+.rdt_Table {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.rdt_Table .rdt_TableHead .rdt_TableHeadRow {
+  font-size: 14px;
+  font-weight: 600;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Light theme styles */
+.lightTable .rdt_Table .rdt_TableHead .rdt_TableHeadRow {
+  background-image: linear-gradient(90deg, #4a69bd 0%, #6a89cc 100%);
+  color: white;
+}
+
+/* Dark theme styles */
+.darkTable .rdt_Table .rdt_TableHead .rdt_TableHeadRow {
+  background: #6a89cc;
+  color: #FFF;
+}
+
+.darkTable .rdt_Table .rdt_TableBody .rdt_TableRow {
+  background: #1A1826;
+  color: #FFF;
+  border-bottom-color: #6B7280;
+}
+
+.darkTable .rdt_Table .rdt_TableBody .rdt_TableRow:hover {
+  border-bottom-color: #6B7280;
+  outline: none;
+  outline-width: 0;
+}
+
+.darkTable .rdt_Pagination {
+  background: #1A1826;
+  color: #d1d5db;
+}
+
+.rdt_Pagination select {
+  outline: none;
+}
+
+.rdt_Pagination select option {
+  color: black;
+}
+
+.darkTable .rdt_Pagination button {
+  fill: #d1d5db;
+}
+
+.shadow-customInp:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(150, 149, 202, 1);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+}
+
+/* Skeleton Container */
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Skeleton Animation */
+.skeleton::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 150%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    left: -150%;
+  }
+
+  50% {
+    left: 50%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+/* Skeleton Variants */
+.skeleton.text {
+  height: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.skeleton.circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.skeleton.rectangle {
+  height: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+}

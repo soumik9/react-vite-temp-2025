@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import { AUTH_LINK } from '@src/libs/enum/link';
 
 const HomePage = () => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        navigate(AUTH_LINK.LOGIN, {
+            replace: true,
+        });
+    }, []);
+
     return (
-        <h1 className='text-4xl font-bold text-center text-mint-500'>
-            Home
-        </h1>
+        <></>
     );
 };
 
