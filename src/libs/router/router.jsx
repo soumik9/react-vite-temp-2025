@@ -1,10 +1,11 @@
-import { CustomerPage, DashboardPage, HomePage } from "@src/pages";
+import { DashboardLayout } from "@src/components/Layout";
+import { CustomerPage, DashboardPage, HomePage, LoginPage } from "@src/pages";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 const routes = createBrowserRouter([
     {
         path: '/login',
-        element: <Login />,
+        element: <LoginPage />,
     },
     {
         path: '/',
@@ -12,7 +13,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '/panel',
-        element: <PanelLayout />,
+        element: <DashboardLayout />,
         children: [
             {
                 path: 'dashboard',

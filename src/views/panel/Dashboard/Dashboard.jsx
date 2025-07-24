@@ -1,16 +1,15 @@
-import CardLayout from '@/components/Layout/Dashboard/CardLayout';
-import { cx } from '@/utils/hooks/helper';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { LuServerCog, LuUsers } from "react-icons/lu";
 import { FaUserTie } from "react-icons/fa";
-import { useGetDashboardStatsQuery } from '@/redux-rtk/features/dashboard/dashboardApi';
 import { BsHouseCheck, BsHouseDash } from 'react-icons/bs';
 import { TbCoinTaka } from 'react-icons/tb';
-import DataTable from 'react-data-table-component';
-import DataTableWrapper from '@/components/Layout/DataTableWrapper/DataTableWrapper';
-import SelectCustom from '@/components/Froms/SelectCustom';
+// import DataTable from 'react-data-table-component';
 import moment from 'moment';
+import { CardLayout, DataTableWrapper } from '@src/components/Layout';
+import { cn } from '@src/libs/hooks';
+import { useGetDashboardStatsQuery } from '@src/redux-rtk';
+import { SelectCustom } from '@src/components/Froms';
 
 const Dashboard = () => {
 
@@ -71,19 +70,19 @@ const Dashboard = () => {
                         {dashboard?.data?.monthlyStatsData.map((stat, index) => (
                             <div
                                 key={index}
-                                className={cx(
+                                className={cn(
                                     "flex px-8 lg:px-6 py-4 flex-col items-center justify-center rounded-md border border-dashed trans ",
                                     isDark ? "border-stone-200 hover:border-livid" : "border-primary hover:border-gray-400/80"
                                 )}
                             >
                                 <div className="flex flex-row items-center justify-center gap-x-2 text-2xl text-lightDark">
-                                    <TbCoinTaka className={cx(iconCmnCls)} />
-                                    <span className={cx(
+                                    <TbCoinTaka className={cn(iconCmnCls)} />
+                                    <span className={cn(
                                         "font-semibold",
                                         isDark ? "text-white" : "text-secondary"
                                     )}>{stat.count}</span>
                                 </div>
-                                <div className={cx(
+                                <div className={cn(
                                     "mt-2 text-base font-medium",
                                     isDark ? "text-white" : "text-primary"
                                 )}>{stat.title}</div>
@@ -92,7 +91,7 @@ const Dashboard = () => {
                     </div>
                 </CardLayout>
                 <CardLayout isNotInitalized={true} title="Employee">
-                    <DataTableWrapper>
+                    {/* <DataTableWrapper>
                         <DataTable
                             columns={columns}
                             data={dashboard?.data?.employeesStatics}
@@ -102,7 +101,7 @@ const Dashboard = () => {
                             paginationPerPage={10}
                             progressPending={isLoading}
                         />
-                    </DataTableWrapper>
+                    </DataTableWrapper> */}
                 </CardLayout>
             </div>
 
@@ -111,29 +110,29 @@ const Dashboard = () => {
                     {dashboard?.data?.staticsData.map((stat, index) => (
                         <div
                             key={index}
-                            className={cx(
+                            className={cn(
                                 "flex px-8 lg:px-6 xll:px-8 py-4 flex-col items-center justify-center rounded-md border border-dashed trans ",
                                 isDark ? "border-stone-200 hover:border-livid" : "border-primary hover:border-gray-400/80"
                             )}
                         >
                             <div className="flex flex-row items-center justify-center gap-x-2 text-2xl text-lightDark">
 
-                                {index === 0 && <LuUsers className={cx(iconCmnCls)} />}
-                                {index === 1 && <FaUserTie className={cx(iconCmnCls)} />}
-                                {index === 2 && <LuServerCog className={cx(iconCmnCls)} />}
-                                {index === 3 && <BsHouseDash className={cx(iconCmnCls)} />}
-                                {index === 4 && <BsHouseCheck className={cx(iconCmnCls)} />}
+                                {index === 0 && <LuUsers className={cn(iconCmnCls)} />}
+                                {index === 1 && <FaUserTie className={cn(iconCmnCls)} />}
+                                {index === 2 && <LuServerCog className={cn(iconCmnCls)} />}
+                                {index === 3 && <BsHouseDash className={cn(iconCmnCls)} />}
+                                {index === 4 && <BsHouseCheck className={cn(iconCmnCls)} />}
                                 {
                                     (index === 5 || index === 6 || index === 7 || index === 8 || index === 9) &&
-                                    <TbCoinTaka className={cx(iconCmnCls)} />
+                                    <TbCoinTaka className={cn(iconCmnCls)} />
                                 }
 
-                                <span className={cx(
+                                <span className={cn(
                                     "font-semibold",
                                     isDark ? "text-white" : "text-secondary"
                                 )}>{stat.count}</span>
                             </div>
-                            <div className={cx(
+                            <div className={cn(
                                 "mt-2 text-base font-medium",
                                 isDark ? "text-white" : "text-primary"
                             )}>{stat.title}</div>

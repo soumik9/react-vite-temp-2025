@@ -1,4 +1,4 @@
-import { cx } from '@/utils/hooks/helper';
+import { cn } from '@src/libs/hooks';
 import React from 'react'
 import { useSelector } from 'react-redux';
 import Select from 'react-select';
@@ -54,13 +54,13 @@ const SelectCustom = ({
     };
 
     return (
-        <div className={cx(
+        <div className={cn(
             divCss, "mt-0.5 scrollbar relative"
         )}>
 
             {label ? <label
                 htmlFor={id}
-                className={cx(
+                className={cn(
                     global.isDark ? 'text-gray-300' : 'text-gray-600',
                     "text-sm font-semibold px-1 "
                 )}

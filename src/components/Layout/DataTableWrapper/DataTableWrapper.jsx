@@ -1,5 +1,5 @@
-import { cx } from '@/utils/hooks/helper';
 import React from 'react'
+import { cn } from '@src/libs/hooks';
 import { useSelector } from 'react-redux';
 
 const DataTableWrapper = ({ componentRef, children }) => {
@@ -8,7 +8,7 @@ const DataTableWrapper = ({ componentRef, children }) => {
     const global = useSelector((state) => state.global);
 
     return (
-        <div className={cx(
+        <div className={cn(
             global.isDark ? 'darkTable' : 'lightTable',
             'users_datatable cursor-default'
         )} ref={componentRef}>

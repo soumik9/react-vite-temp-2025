@@ -1,9 +1,9 @@
-import { cx } from '@/utils/hooks/helper'
+import { cn } from '@src/libs/hooks'
 import React from 'react'
 
 const EmptyData = ({ height, errorMsg }) => {
     return (
-        <div className={cx(
+        <div className={cn(
             'f-center mt-8 cardLayout py-6 px-5',
             height ? height : 'h-screen'
         )}

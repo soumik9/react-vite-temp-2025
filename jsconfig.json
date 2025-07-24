@@ -9,7 +9,7 @@
         "pages/*"
       ],
       "@redux/*": [
-        "redux/*"
+        "redux-rtk/*"
       ],
       "@libs/*": [
         "libs/*"

@@ -1,5 +1,5 @@
-import { toggleDarkMode } from '@/redux-rtk/features/global/globalSlice';
 import React from 'react';
+import { toggleDarkMode } from '@src/redux-rtk';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ThemeController = () => {

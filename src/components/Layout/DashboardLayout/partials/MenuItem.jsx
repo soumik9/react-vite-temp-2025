@@ -1,7 +1,7 @@
-import { cx } from '@/utils/hooks/helper';
-import Link from 'next/link';
+import { cn } from '@src/libs/hooks';
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router';
 
 const MenuItem = ({ menu, open, isActive }) => {
 
@@ -14,8 +14,8 @@ const MenuItem = ({ menu, open, isActive }) => {
     return (
         <li>
             <Link
-                href={to}
-                className={cx(
+                to={to}
+                className={cn(
                     global.isDark ? 'text-gray-300' : 'text-white',
                     'font-medium text-base flex items-center gap-x-3.5 cursor-pointer px-2.5 py-3 hover:bg-livid trans rounded-md',
                     isActive && global.isDark ? 'bg-blueNight' : '',
@@ -24,7 +24,7 @@ const MenuItem = ({ menu, open, isActive }) => {
                 )}
             >
                 <span className='w-6'>{icon}</span>
-                <span className={cx(
+                <span className={cn(
                     !open && 'hidden',
                     'origin-left duration-200 relative top-[-1px] tracking-wide'
                 )}>

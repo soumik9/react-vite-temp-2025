@@ -1,8 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { cx } from '@/utils/hooks/helper';
-import Loading from './Loading';
-import EmptyData from './EmptyData';
+import { EmptyData, Loading } from '.';
+import { cn } from '@src/libs/hooks';
 
 const commonCls = 'mt-8 cardLayout py-6 px-5'
 const commonTitleCls = 'text-[22px] font-medium font-secondary'
@@ -23,11 +22,11 @@ const CardLayout = ({ children, title, isLoading, isError, isSuccess, isNotInita
             commonCls,
         )}>
 
-            {title && (<div className={cx(
+            {title && (<div className={cn(
                 searchBar ? commonSearchBarCls : '',
                 'border-b border-gray-300 mb-8 pb-3'
             )}>
-                <h1 className={cx(
+                <h1 className={cn(
                     global.isDark ? 'text-secondary-200' : 'text-gray-600 ',
                     commonTitleCls
                 )}>
@@ -41,16 +40,16 @@ const CardLayout = ({ children, title, isLoading, isError, isSuccess, isNotInita
         </div>
     )
 
-    if (isNotInitalized) return <div className={cx(
+    if (isNotInitalized) return <div className={cn(
         global.isDark ? 'bg-lightDark' : 'bg-white',
         commonCls,
     )}>
 
-        {title && (<div className={cx(
+        {title && (<div className={cn(
             searchBar ? commonSearchBarCls : '',
             'border-b border-gray-300 mb-8 pb-3'
         )}>
-            <h1 className={cx(
+            <h1 className={cn(
                 global.isDark ? 'text-secondary-200' : 'text-gray-600 ',
                 commonTitleCls
             )}>

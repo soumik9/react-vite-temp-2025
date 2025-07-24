@@ -1,9 +1,9 @@
-import { cx } from '@/utils/hooks/helper'
+import { cn } from '@src/libs/hooks'
 import React from 'react'
 
 const Loading = ({ height }) => {
     return (
-        <div className={cx(
+        <div className={cn(
             'f-center',
             height ? '3xl:h-[62vh] lg:h-[50vh] h-[35vh]' : 'h-screen'
         )}

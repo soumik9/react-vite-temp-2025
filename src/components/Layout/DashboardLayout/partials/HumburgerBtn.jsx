@@ -1,4 +1,4 @@
-import { cx } from '@/utils/hooks/helper';
+import { cn } from '@src/libs/hooks';
 import React from 'react'
 import { AiOutlineClose, AiOutlineUnorderedList } from 'react-icons/ai';
 
@@ -12,11 +12,11 @@ const HumburgerBtn = ({ setOpen, open, isDark }) => {
             onClick={() => setOpen(!open)}
         >
             {open ?
-                <AiOutlineClose className={cx(
+                <AiOutlineClose className={cn(
                     isDark ? " hover:text-secondary" : "text-primary hover:text-secondary",
                     toggleIconCmnCls
                 )} /> :
-                <AiOutlineUnorderedList className={cx(
+                <AiOutlineUnorderedList className={cn(
                     isDark ? " hover:text-secondary" : "text-primary hover:text-secondary",
                     toggleIconCmnCls
                 )} />}

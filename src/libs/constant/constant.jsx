@@ -2,7 +2,7 @@ import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { RiUserStarLine, RiUserSettingsLine } from "react-icons/ri";
 import { TbHttpPost } from "react-icons/tb";
 import { CUSTOMER_LINKS, DASHBOARD_LINKS, DEMO_LINKS, EMPLOYEE_LINKS, ORDER_LINKS, USER_LINKS } from "../enum/link";
-import { cx } from "../hooks/helper";
+import { cn } from "../hooks";
 
 // *dashboard layouts
 export const dashboardLayoutUrls = [
@@ -22,7 +22,7 @@ export const dashboardMenuItems = [
     {
         to: DASHBOARD_LINKS.DASHBOARD,
         text: "Dashboard",
-        icon: <MdOutlineSpaceDashboard className={cx(iconSize)} />,
+        icon: <MdOutlineSpaceDashboard className={cn(iconSize)} />,
         activeLinks: [
             ...Object.values(DASHBOARD_LINKS),
         ]
@@ -30,7 +30,7 @@ export const dashboardMenuItems = [
     {
         to: ORDER_LINKS.ORDER,
         text: "Orders",
-        icon: <TbHttpPost className={cx(iconSize)} />,
+        icon: <TbHttpPost className={cn(iconSize)} />,
         activeLinks: [
             ...Object.values(ORDER_LINKS),
         ]
@@ -38,7 +38,7 @@ export const dashboardMenuItems = [
     {
         to: CUSTOMER_LINKS.CUSTOMER,
         text: "Customers",
-        icon: <RiUserStarLine className={cx(iconSize)} />,
+        icon: <RiUserStarLine className={cn(iconSize)} />,
         activeLinks: [
             ...Object.values(CUSTOMER_LINKS),
         ]
@@ -46,7 +46,7 @@ export const dashboardMenuItems = [
     {
         to: EMPLOYEE_LINKS.EMPLOYEE,
         text: "Employees",
-        icon: <RiUserSettingsLine className={cx(iconSize)} />,
+        icon: <RiUserSettingsLine className={cn(iconSize)} />,
         activeLinks: [
             ...Object.values(EMPLOYEE_LINKS),
         ]

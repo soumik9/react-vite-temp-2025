@@ -1,13 +1,13 @@
 import React from 'react'
 import { IoTrash } from 'react-icons/io5';
-import { ENUM_ACTION_TITLE } from '@/utils/enum/enum';
-import { cx } from '@/utils/hooks/helper';
 import { actionBtnClass, actionBtnIconClass } from './ActionLink';
+import { ENUM_ACTION_TITLE } from '@src/libs/enum/enum';
+import { cn } from '@src/libs/hooks';
 
 const ActionButton = ({ itype, ...props }) => {
     return (
         <button
-            className={cx(
+            className={cn(
                 actionBtnClass,
                 itype === ENUM_ACTION_TITLE.ACCOUNT ? 'bg-primary hover:bg-primary-600' : '',
                 itype === ENUM_ACTION_TITLE.VIEW ? 'bg-secondary-400 hover:bg-secondary-600' : '',
@@ -19,7 +19,7 @@ const ActionButton = ({ itype, ...props }) => {
         >
             {/* delete icon */}
             {itype === ENUM_ACTION_TITLE.DELETE ? <IoTrash
-                className={cx(actionBtnIconClass)}
+                className={cn(actionBtnIconClass)}
             /> : ''}
         </button>
     )

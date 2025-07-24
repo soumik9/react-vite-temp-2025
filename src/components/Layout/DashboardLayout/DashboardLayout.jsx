@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import DashboardHeader from './components/DashboardHeader';
-import DashboardSidebar from './components/DashboardSidebar';
-import { cx } from '@/utils/hooks/helper';
 import { useSelector } from 'react-redux';
+import { DashboardHeader, DashboardSidebar } from './components';
+import { cn } from '@src/libs/hooks';
 
 const DashboardLayout = ({ children }) => {
 
@@ -31,7 +30,7 @@ const DashboardLayout = ({ children }) => {
                 setOpen={setOpen}
             />
 
-            <main className={cx(
+            <main className={cn(
                 global.isDark ? 'bg-blueNight' : 'bg-gray-100',
                 'flex flex-col flex-1 h-screen overflow-hidden'
             )}>

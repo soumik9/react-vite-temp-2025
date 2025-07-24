@@ -1,4 +1,4 @@
-import { cx } from "@/utils/hooks/helper";
+import { cn } from "@src/libs/hooks";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -8,8 +8,8 @@ const Textarea = ({ label, id, placeholder, onChange, required, error, inputCss,
     const global = useSelector((state) => state.global);
 
     return (
-        <div className={cx(divCss, "w-full relative")}>
-            <label htmlFor={id} className={cx(
+        <div className={cn(divCss, "w-full relative")}>
+            <label htmlFor={id} className={cn(
                 global.isDark ? 'text-gray-300' : 'text-gray-600',
                 "text-sm font-semibold px-1"
             )}>
@@ -19,7 +19,7 @@ const Textarea = ({ label, id, placeholder, onChange, required, error, inputCss,
             <textarea
                 id={id}
                 name={id}
-                className={cx(
+                className={cn(
                     inputCss,
                     error ?
                         'border-error focus:!border-error' :
