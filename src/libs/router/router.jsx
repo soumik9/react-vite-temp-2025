@@ -1,6 +1,6 @@
 import { DashboardLayout } from "@src/components/Layout";
 import ProtectedRoute from "@src/components/ProtectedRoute/ProtectedRoute";
-import { CustomerPage, DashboardPage, HomePage, LoginPage } from "@src/pages";
+import { AddCustomerPage, CustomerPage, DashboardPage, HomePage, LoginPage } from "@src/pages";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 const routes = createBrowserRouter([
@@ -29,6 +29,10 @@ const routes = createBrowserRouter([
                     {
                         index: true,
                         element: <CustomerPage />,
+                    },
+                    {
+                        path: 'add',
+                        element: <AddCustomerPage />,
                     },
                 ],
             },

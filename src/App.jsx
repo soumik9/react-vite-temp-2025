@@ -1,6 +1,6 @@
 import './App.css'
 import { Router } from './libs'
-import { useAuthCheck } from './libs/hooks'
+import { NotifyContainer, useAuthCheck } from './libs/hooks'
 
 const App = () => {
 
@@ -11,6 +11,7 @@ const App = () => {
   return (
     <>
       <Router />
+      <NotifyContainer />
     </>
   )
 }

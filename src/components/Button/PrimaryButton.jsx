@@ -13,7 +13,7 @@ const PrimaryButton = ({ type = 'submit', loadingText = '', isLoading, text, var
         <button
             type={type}
             className={cn(
-                "trans h-[50px] disabled:text-gray-200 rounded-lg text-base outline-none capitalize w-full md:w-max md:px-6 font-semibold tracking-wide ",
+                "trans h-[50px] disabled:text-gray-200 rounded-lg text-base outline-none capitalize w-full md:w-max md:px-6 font-semibold tracking-wide cursor-pointer",
 
                 global.isDark ? 'bg-livid hover:bg-secondary disabled:bg-slate-400' : 'bg-secondary hover:bg-primary disabled:bg-livid',
                 variant ? 'bg-transparent border-2 hover:text-white' : 'text-white',

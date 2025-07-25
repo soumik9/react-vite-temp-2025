@@ -1,8 +1,8 @@
-import PrimaryButton from '@/components/Button/PrimaryButton';
-import Input from '@/components/Froms/Input';
-import CardLayout from '@/components/Layout/Dashboard/CardLayout';
-import { useCreateCustomerMutation } from '@/redux-rtk/features/customer/customerApi';
-import { errorNotify, successNotify } from '@/utils/hooks/notify';
+import { PrimaryButton } from '@src/components';
+import { Input } from '@src/components/Froms';
+import { CardLayout } from '@src/components/Layout';
+import { errorNotify, successNotify } from '@src/libs/hooks';
+import { useCreateCustomerMutation } from '@src/redux-rtk';
 import React from 'react';
 
 const AddCustomer = () => {
