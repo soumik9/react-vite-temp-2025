@@ -4,7 +4,7 @@ import { LuServerCog, LuUsers } from "react-icons/lu";
 import { FaUserTie } from "react-icons/fa";
 import { BsHouseCheck, BsHouseDash } from 'react-icons/bs';
 import { TbCoinTaka } from 'react-icons/tb';
-// import DataTable from 'react-data-table-component';
+import DataTable from 'react-data-table-component';
 import moment from 'moment';
 import { CardLayout, DataTableWrapper } from '@src/components/Layout';
 import { cn } from '@src/libs/hooks';
@@ -49,7 +49,7 @@ const Dashboard = () => {
     ];
 
     if (isLoading || isFetching)
-        return <div class="skeleton rounded-md !h-[65vh] rectangle mt-8"></div>
+        return <div className="skeleton rounded-md !h-[65vh] rectangle mt-8"></div>
 
     return (
         <>
@@ -91,7 +91,7 @@ const Dashboard = () => {
                     </div>
                 </CardLayout>
                 <CardLayout isNotInitalized={true} title="Employee">
-                    {/* <DataTableWrapper>
+                    <DataTableWrapper>
                         <DataTable
                             columns={columns}
                             data={dashboard?.data?.employeesStatics}
@@ -101,7 +101,7 @@ const Dashboard = () => {
                             paginationPerPage={10}
                             progressPending={isLoading}
                         />
-                    </DataTableWrapper> */}
+                    </DataTableWrapper>
                 </CardLayout>
             </div>
 

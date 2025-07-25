@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { DashboardHeader, DashboardSidebar } from './components';
 import { cn } from '@src/libs/hooks';
+import { Outlet } from 'react-router';
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = () => {
 
     // *global
     const global = useSelector((state) => state.global);
@@ -42,7 +43,7 @@ const DashboardLayout = ({ children }) => {
 
                 <div className='overflow-y-auto scrollbar'>
                     <div className='mx-8 my-6'>
-                        {children}
+                        <Outlet />
                     </div>
                 </div>
 

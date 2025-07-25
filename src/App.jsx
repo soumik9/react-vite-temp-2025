@@ -1,13 +1,17 @@
 import './App.css'
 import { Router } from './libs'
-import { Provider } from 'react-redux'
-import { store } from './redux-rtk/app/store'
+import { useAuthCheck } from './libs/hooks'
 
 const App = () => {
+
+  // authentication checking
+  const authChecked = useAuthCheck();
+  if (!authChecked) return <div className='text-center'>Checking authentication....</div>
+
   return (
-    <Provider store={store}>
+    <>
       <Router />
-    </Provider>
+    </>
   )
 }
 
