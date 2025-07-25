@@ -1,15 +1,15 @@
-import Link from 'next/link'
+import { cn } from '@src/libs/hooks';
 import React from 'react'
 import { AiOutlineHome } from 'react-icons/ai';
-import { cx } from "@/utils/hooks/helper";
+import { Link } from 'react-router';
 
 const BreadNavItem = ({ links, item, index, isDark }) => {
     return (
         <>
             <li className="" key={index}>
                 <Link
-                    href={item.url}
-                    className={cx(
+                    to={item.url}
+                    className={cn(
                         'flex items-center gap-1 trans lg:text-base text-sm',
 
                         (isDark && item.isActive) && '!text-livid hover:!text-secondary font-medium',

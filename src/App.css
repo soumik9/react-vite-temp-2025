@@ -36,8 +36,8 @@
   --breakpoint-2xl: 1650px;
   --breakpoint-3xl: 1920px;
 
-  --background-primary: linear-gradient(90deg, #192a56 0%, #4a69bd 100%);
-  --background-darkPrimary: linear-gradient(to right, #1a1826, #1e1f2d, #232733, #292e3a, #2f3640);
+  /* --background-primary: linear-gradient(90deg, #192a56 0%, #4a69bd 100%);
+  --background-darkPrimary: linear-gradient(to right, #1a1826, #1e1f2d, #232733, #292e3a, #2f3640); */
 }
 
 @layer utilities {
@@ -55,5 +55,13 @@
 
   .cardLayout {
     @apply shadow-md rounded-md;
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(90deg, #192a56 0%, #4a69bd 100%);
+  }
+
+  .bg-gradient-darkPrimary {
+    background: linear-gradient(to right, #1a1826, #1e1f2d, #232733, #292e3a, #2f3640);
   }
 }

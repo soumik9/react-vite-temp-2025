@@ -1,7 +1,7 @@
-import { cx } from "@/utils/hooks/helper";
 import React from "react";
 import { useSelector } from "react-redux";
 import CircleLoading from "../Icons/CircleLoading";
+import { cn } from "@src/libs/hooks";
 
 const SecondaryButton = ({ type = 'submit', loadingText, isLoading, text, variant = false, css, startIcon, endIcon, ...props }) => {
 
@@ -11,7 +11,7 @@ const SecondaryButton = ({ type = 'submit', loadingText, isLoading, text, varian
     return (
         <button
             type={type}
-            className={cx(
+            className={cn(
                 "trans h-[50px] disabled:text-gray-200 rounded-lg text-base outline-none capitalize w-full md:w-max md:px-6 font-semibold tracking-wide disabled:bg-slate-400",
 
                 global.isDark ? 'bg-livid hover:bg-secondary' : 'bg-blueNight hover:bg-lightDark',

@@ -1,13 +1,13 @@
-import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 const ProtectedRoute = ({ children }) => {
 
     const { isAuthenticated } = useSelector((state) => state.auth);
-    const router = useRouter();
+    const navigate = useNavigate();
 
     if (!isAuthenticated) {
-        router.push('/login')
+        navigate('/login')
     }
 
     return children;

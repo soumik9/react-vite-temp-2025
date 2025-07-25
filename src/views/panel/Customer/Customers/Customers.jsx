@@ -34,7 +34,7 @@ const Customers = () => {
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
-    console.log(componentRef)
+    // console.log(componentRef)
 
     const isPrintDisabled = isLoading || filteredData?.length === 0;
 

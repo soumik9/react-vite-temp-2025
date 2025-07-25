@@ -1,4 +1,5 @@
 import { DashboardLayout } from "@src/components/Layout";
+import ProtectedRoute from "@src/components/ProtectedRoute/ProtectedRoute";
 import { CustomerPage, DashboardPage, HomePage, LoginPage } from "@src/pages";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
@@ -13,7 +14,9 @@ const routes = createBrowserRouter([
     },
     {
         path: '/panel',
-        element: <DashboardLayout />,
+        element: <ProtectedRoute>
+            <DashboardLayout />
+        </ProtectedRoute>,
         children: [
             {
                 path: 'dashboard',
@@ -21,7 +24,13 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'customer',
-                element: <CustomerPage />,
+                // element: <></>,
+                children: [
+                    {
+                        index: true,
+                        element: <CustomerPage />,
+                    },
+                ],
             },
         ],
     },

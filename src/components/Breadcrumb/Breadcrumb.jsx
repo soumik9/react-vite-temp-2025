@@ -1,11 +1,10 @@
-import { useRouter } from "next/router";
 import React, { useState } from "react";
-import BreadNavItem from "./partial/BreadNavItem";
 import { useSelector } from "react-redux";
-import { cx } from "@/utils/hooks/helper";
-import { DASHBOARD_LINKS } from "@/utils/enum/link";
-import PrimaryButton from "../Button/PrimaryButton";
 import { GrFormNextLink } from "react-icons/gr";
+import { useLocation, useNavigate } from "react-router";
+import { DASHBOARD_LINKS } from "@src/libs/enum/link";
+import { cn } from "@src/libs/hooks";
+import BreadNavItem from "./partial/BreadNavItem";
 import SecondaryButton from "../Button/SecondaryButton";
 
 const Breadcrumb = ({
@@ -16,7 +15,8 @@ const Breadcrumb = ({
 }) => {
 
   // *global
-  const router = useRouter();
+  const navigate = useNavigate();
+  const location = useLocation();
   const global = useSelector((state) => state.global);
 
   // states
@@ -24,18 +24,18 @@ const Breadcrumb = ({
     {
       url: DASHBOARD_LINKS.DASHBOARD,
       text: 'Dashboard',
-      isActive: router.pathname === DASHBOARD_LINKS.DASHBOARD
+      isActive: location.pathname === DASHBOARD_LINKS.DASHBOARD
     },
     ...(getLinks || [])
   ])
 
   return (
-    <div className={cx(
+    <div className={cn(
       global.isDark ? "bg-gradient-darkPrimary" : "bg-gradient-primary",
       "flex flex-col md:flex-row justify-between md:items-center breadcrumbLayout py-4 px-5 "
     )}>
       <div>
-        <h2 className={cx(
+        <h2 className={cn(
           global.isDark ? 'text-livid' : 'text-white',
           "lg:text-[28px] text-2xl font-medium  cursor-default font-secondary"
         )}>
@@ -56,8 +56,8 @@ const Breadcrumb = ({
       {(nextPageText && nextPageLink) ? <div className="mt-4 md:mt-0">
         <SecondaryButton
           text={nextPageText}
-          endIcon={<GrFormNextLink className={cx('text-[26px] relative -top-[1px]')} />}
-          onClick={() => router.push(nextPageLink ? nextPageLink : '')}
+          endIcon={<GrFormNextLink className={cn('text-[26px] relative -top-[1px]')} />}
+          onClick={() => navigate(nextPageLink ? nextPageLink : '')}
           css=''
         />
       </div> : null}
