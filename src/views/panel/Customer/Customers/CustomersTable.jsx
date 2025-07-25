@@ -1,8 +1,8 @@
 import React from 'react';
-import DataTable from 'react-data-table-component';
 import CActionBtn from './CActionBtn';
-import { useDeleteCustomerMutation } from '@/redux-rtk/features/customer/customerApi';
-import { cx } from '@/utils/hooks/helper';
+import DataTable from 'react-data-table-component';
+import { useDeleteCustomerMutation } from '@src/redux-rtk';
+import { cn } from '@src/libs/hooks';
 
 const CustomersTable = ({ datas, isLoading }) => {
 
@@ -35,7 +35,7 @@ const CustomersTable = ({ datas, isLoading }) => {
                 const balance = row?.account?.balance || 0; // Default to 0 if balance is undefined
                 const displayBalance = balance < 0 ? Math.abs(balance) : -balance;
                 return (
-                    <span className={cx(
+                    <span className={cn(
                         balance < 0 ? 'text-red-500' : 'text-green-500',
                         'font-semibold'
                     )}>

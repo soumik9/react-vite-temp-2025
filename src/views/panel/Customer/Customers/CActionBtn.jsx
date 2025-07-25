@@ -1,8 +1,7 @@
-import ActionButton from '@/components/Layout/Dashboard/ActionButton'
-import ActionLink from '@/components/Layout/Dashboard/ActionLink'
-import { ENUM_ACTION_TITLE } from '@/utils/enum/enum'
-import { CUSTOMER_LINKS, USER_LINKS } from '@/utils/enum/link'
-import useDelete from '@/utils/hooks/useDelete'
+import { ActionButton, ActionLink } from '@src/components/Layout';
+import { ENUM_ACTION_TITLE } from '@src/libs/enum/enum';
+import { CUSTOMER_LINKS } from '@src/libs/enum/link';
+import { useDelete } from '@src/libs/hooks';
 import React from 'react'
 
 const CActionBtn = ({ _id, deleteCustomer }) => {

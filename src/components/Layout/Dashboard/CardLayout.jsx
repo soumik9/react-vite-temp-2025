@@ -17,7 +17,7 @@ const CardLayout = ({ children, title, isLoading, isError, isSuccess, isNotInita
     if (!isLoading && isError) return <EmptyData height='h-[62vh]' errorMsg />
 
     if (isSuccess && !isLoading && !isError) return (
-        <div className={cx(
+        <div className={cn(
             global.isDark ? 'bg-lightDark' : 'bg-white',
             commonCls,
         )}>

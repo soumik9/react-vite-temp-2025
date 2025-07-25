@@ -20,7 +20,7 @@ const routes = createBrowserRouter([
                 element: <DashboardPage />,
             },
             {
-                path: 'user',
+                path: 'customer',
                 element: <CustomerPage />,
             },
         ],
