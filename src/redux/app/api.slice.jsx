@@ -1,9 +1,8 @@
 import { logout } from "../auth";
-import { config } from "@src/libs";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: config.baseUrl,
+    baseUrl: import.meta.env.VITE_BASE_URL,
     prepareHeaders: (headers, { getState }) => {
         const accessToken = getState().auth.accessToken;
         if (accessToken) {

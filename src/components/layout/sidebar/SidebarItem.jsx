@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { cn } from '@src/libs/helper';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useGetActivePath } from '@src/libs/hooks';
 import { setActivePath, setMobileMenuOpen } from '@src/redux';
@@ -15,8 +15,8 @@ const SidebarItem = ({ menu }) => {
             <Link
                 to={menu.to}
                 className={cn(
-                    'text-base flex items-center gap-x-2 cursor-pointer p-4 text-white ',
-                    activePath === menu.activePath ? 'bg-main-500 rounded-[8px] font-semibold' : 'bg-main-black hover:opacity-80 font-normal trans'
+                    'text-base flex items-center gap-x-2 cursor-pointer p-4 text-light-gray rounded-lg font-semibold text-lg',
+                    activePath === menu.activePath ? 'bg-primary ' : 'hover:bg-blueNight font-normal'
                 )}
                 onClick={() => {
                     dispatch(setActivePath(menu.activePath));

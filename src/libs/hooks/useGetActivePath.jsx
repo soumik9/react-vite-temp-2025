@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
+import { setActiveGlobalSidebar } from "@src/redux";
 import { useDispatch, useSelector } from "react-redux";
 import { AdminPathEnum, DashboardPathEnum, ProductPathEnum, SettingPathEnum } from "../enum";
 
