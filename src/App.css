@@ -41,3 +41,29 @@
   --breakpoint-2xl: 1650px;
   --breakpoint-3xl: 1920px;
 }
+
+@layer utilities {
+  .flex_center {
+    @apply flex justify-center items-center;
+  }
+
+  .transition_common {
+    @apply transition ease-in-out duration-300;
+  }
+
+  .breadcrumb_layout {
+    @apply shadow-md rounded-md;
+  }
+
+  .card_layout {
+    @apply shadow-md rounded-md;
+  }
+
+  .bg_gradient_primary {
+    background: linear-gradient(90deg, #192a56 0%, #4a69bd 100%);
+  }
+
+  .bg_gradient_darkPrimary {
+    background: linear-gradient(to right, #1a1826, #1e1f2d, #232733, #292e3a, #2f3640);
+  }
+}
