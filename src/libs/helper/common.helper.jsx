@@ -1,3 +1,7 @@
+import classNames from 'classnames';
+
+export const cn = classNames;
+
 // copy handler
 export const handleCopy = (text) => {
     navigator.clipboard.writeText(text).then(() => {
