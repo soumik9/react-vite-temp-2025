@@ -2,10 +2,42 @@
 
 @theme {
 
-    --font-poppins: Poppins, sans-serif;
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-poppins: Poppins, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-    --color-mint-500: oklch(0.72 0.11 178);
-  }
+  --color-lightDark: #1A1826;
+  --color-blueNight: #353b48;
+  --color-electroMagnetic: #2f3640;
+
+  --color-primary: #192a56;
+  --color-secondary: #4a69bd;
+  --color-livid: #6a89cc;
+
+  --color-light-gray: #D3D3D3;
+  --color-silver: #C0C0C0;
+
+  --color-error: #D30F0F;
+  --color-error-hover: #A90000;
+  --color-error-hover-light: #F83F2A;
+
+  --color-warning: #FFCA36;
+  --color-warning-hover: #F8B112;
+
+  --color-success: #006B60;
+  --color-success-light: #12B76A;
+
+  --color-diamond: #1e3799;
+  --color-platinum: #01a3a4;
+  --color-bronze: #AD8A56;
+
+  --breakpoint-*: initial;
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1650px;
+  --breakpoint-3xl: 1920px;
+}

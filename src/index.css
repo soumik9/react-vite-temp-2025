@@ -3,3 +3,7 @@
   font-weight: 400;
 }
 
+button,
+a {
+  cursor: pointer;
+}

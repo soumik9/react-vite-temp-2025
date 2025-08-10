@@ -1,10 +1,11 @@
 
 import { HomePage } from "@src/pages";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import { LoginPathEnum } from "../enum";
 
 const routes = createBrowserRouter([
     {
-        path: '/',
+        path: LoginPathEnum.path,
         element: <HomePage />,
     },
     // Add more routes as needed
