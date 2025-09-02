@@ -3,7 +3,7 @@ import { cn } from '@src/libs/helper';
 import SidebarItem from './SidebarItem';
 import { useSelector } from 'react-redux';
 import { imageStaticPath } from '@src/assets';
-import { sidebarNavData } from '@src/libs/data';
+import { brandName, sidebarNavData } from '@src/libs/data';
 
 const Sidebar = () => {
 
@@ -32,7 +32,7 @@ const Sidebar = () => {
                         isDark ? 'text-gray-300' : 'text-white',
                         'origin-left font-medium xll:text-xl duration-300 cursor-default',
                         !isSidebarOpen && 'scale-0'
-                    )}>Brand Name</h1>
+                    )}>{brandName}</h1>
                 </div>
 
                 <ul className='flex flex-col gap-y-2 flex-grow list-none mt-6 px-5'>

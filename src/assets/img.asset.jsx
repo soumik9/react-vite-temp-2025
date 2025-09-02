@@ -1,4 +1,4 @@
 export const imageStaticPath = {
-    logo: "/images/logo.webp",
+    logo: "/logo.svg",
     error404: "/images/error-404.jpg",
 }
