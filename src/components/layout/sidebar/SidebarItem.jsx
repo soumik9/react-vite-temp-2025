@@ -1,32 +1,38 @@
-import React from 'react';
 import { Link } from 'react-router';
 import { cn } from '@src/libs/helper';
-import { useDispatch } from 'react-redux';
+import { setActivePath } from '@src/redux';
 import { useGetActivePath } from '@src/libs/hooks';
-import { setActivePath, setMobileMenuOpen } from '@src/redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SidebarItem = ({ menu }) => {
 
     const dispatch = useDispatch();
-    const { activePath, subActivePath, isDropdownOpen } = useGetActivePath();
+    const { isDark, isSidebarOpen } = useSelector((state) => state.global);
+    const { activePath, subActivePath, isSidebarItemDropdownOpen } = useGetActivePath();
 
     return (
         <li>
             <Link
                 to={menu.to}
                 className={cn(
-                    'text-base flex items-center gap-x-2 cursor-pointer p-4 text-light-gray rounded-lg font-semibold text-lg',
-                    activePath === menu.activePath ? 'bg-primary ' : 'hover:bg-blueNight font-normal'
+                    isDark ? 'text-gray-300' : 'text-white',
+                    'font-medium flex items-center gap-x-2.5 cursor-pointer px-2.5 py-3 hover:bg-livid transition_common rounded-md text-base',
+                    (activePath === menu.activePath && isDark) ? 'bg-blueNight' : '',
+                    (activePath === menu.activePath && !isDark) ? 'bg-secondary' : '',
                 )}
                 onClick={() => {
                     dispatch(setActivePath(menu.activePath));
-                    setTimeout(() => {
-                        dispatch(setMobileMenuOpen(false));
-                    }, 400);
                 }}
+                draggable={false}
             >
-                {menu.icon}
-                {menu.text}
+                {menu?.icon({ className: 'w-5 h-5' })}
+
+                <span className={cn(
+                    !isSidebarOpen && 'hidden',
+                    'origin-left duration-300 text-lg tracking-wide'
+                )}>
+                    {menu?.text}
+                </span>
             </Link>
         </li>
     );

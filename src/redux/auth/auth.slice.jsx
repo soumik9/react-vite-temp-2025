@@ -40,4 +40,4 @@ export const {
     logout
 } = authSlice.actions;
 
-export const authReducer = authSlice.reducer;
+export const authSliceReducer = authSlice.reducer;

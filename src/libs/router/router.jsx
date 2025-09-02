@@ -1,9 +1,9 @@
 
-import { createBrowserRouter, RouterProvider } from "react-router";
-import { DashboardLayout } from "@src/components";
-import ProtectedRoute from "./ProtectedRoute";
-import { DashboardPage, HomePage } from "@src/pages";
 import { LoginPathEnum } from "../enum";
+import ProtectedRoute from "./ProtectedRoute";
+import { DashboardLayout } from "@src/components";
+import { AdminPage, DashboardPage, HomePage } from "@src/pages";
+import { createBrowserRouter, RouterProvider } from "react-router";
 
 const routes = createBrowserRouter([
     {
@@ -12,13 +12,18 @@ const routes = createBrowserRouter([
     },
     {
         path: '/panel',
-        element: <ProtectedRoute>
-            <DashboardLayout />
-        </ProtectedRoute>,
+        element:
+            // <ProtectedRoute>
+            <DashboardLayout />,
+        // </ProtectedRoute>,
         children: [
             {
                 path: 'dashboard',
                 element: <DashboardPage />,
+            },
+            {
+                path: 'admin',
+                element: <AdminPage />,
             },
             // {
             //     path: 'customer',

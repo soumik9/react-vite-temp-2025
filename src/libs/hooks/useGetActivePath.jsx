@@ -8,27 +8,27 @@ export const useGetActivePath = () => {
 
     const location = useLocation();
     const dispatch = useDispatch();
-    const { activePath, subActivePath, isDropdownOpen } = useSelector((state) => state.global);
+    const { activePath, subActivePath, isSidebarItemDropdownOpen } = useSelector((state) => state.global);
 
     useEffect(() => {
         if (location?.pathname?.includes(AdminPathEnum.path)) {
             dispatch(setActiveGlobalSidebar({
-                activePath: AdminPathEnum.activePath, subActivePath: "", isDropdownOpen: ""
+                activePath: AdminPathEnum.activePath, subActivePath: "", isSidebarItemDropdownOpen: ""
             }));
         } else if (location?.pathname?.includes(ProductPathEnum.path)) {
             dispatch(setActiveGlobalSidebar({
-                activePath: ProductPathEnum.activePath, subActivePath: "", isDropdownOpen: ""
+                activePath: ProductPathEnum.activePath, subActivePath: "", isSidebarItemDropdownOpen: ""
             }));
         } else if (location?.pathname?.includes(SettingPathEnum.path)) {
             dispatch(setActiveGlobalSidebar({
-                activePath: SettingPathEnum.activePath, subActivePath: "", isDropdownOpen: ""
+                activePath: SettingPathEnum.activePath, subActivePath: "", isSidebarItemDropdownOpen: ""
             }));
         } else {
             dispatch(setActiveGlobalSidebar({
-                activePath: DashboardPathEnum.activePath, subActivePath: "", isDropdownOpen: ""
+                activePath: DashboardPathEnum.activePath, subActivePath: "", isSidebarItemDropdownOpen: ""
             }));
         }
     }, [dispatch, location?.pathname]);
 
-    return { activePath, subActivePath, isDropdownOpen };
+    return { activePath, subActivePath, isSidebarItemDropdownOpen };
 }

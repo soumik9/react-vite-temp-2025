@@ -1,13 +1,13 @@
 import { apiSlice } from "./api.slice";
 import { configureStore } from "@reduxjs/toolkit";
-import { authReducer } from "../auth";
-import { globalReducer } from "../global";
+import { authSliceReducer } from "../auth";
+import { globalSliceReducer } from "../global";
 
 export const store = configureStore({
     reducer: {
         [apiSlice.reducerPath]: apiSlice.reducer,
-        auth: authReducer,
-        global: globalReducer,
+        auth: authSliceReducer,
+        global: globalSliceReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

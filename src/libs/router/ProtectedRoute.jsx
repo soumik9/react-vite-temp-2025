@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { LoginPathEnum } from "../enum";
 
 const ProtectedRoute = ({ children }) => {
 
-    const { isAuthenticated } = useSelector((state) => state.auth);
     const navigate = useNavigate();
+    const { isAuthenticated } = useSelector((state) => state.auth);
 
     if (!isAuthenticated) {
-        navigate('/login')
+        navigate(LoginPathEnum.path)
     }
 
     return children;

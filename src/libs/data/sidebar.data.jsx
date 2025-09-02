@@ -6,21 +6,21 @@ export const sidebarNavData = [
     {
         to: DashboardPathEnum.path,
         text: DashboardPathEnum.title,
-        icon: <FaHouse />,
+        icon: ({ className }) => <FaHouse className={className} />,
         activePath: DashboardPathEnum.activePath,
         // roles: [RolesEnum.SUPER_ADMIN, RolesEnum.ADMIN, RolesEnum.MODERATOR],
     },
     {
         to: ProductPathEnum.path,
         text: ProductPathEnum.title,
-        icon: <FaGopuram />,
+        icon: ({ className }) => <FaGopuram className={className} />,
         activePath: ProductPathEnum.activePath,
         // roles: [RolesEnum.SUPER_ADMIN, RolesEnum.ADMIN, RolesEnum.MODERATOR],
     },
     {
         to: AdminPathEnum.path,
         text: AdminPathEnum.title,
-        icon: <FaUserNinja />,
+        icon: ({ className }) => <FaUserNinja className={className} />,
         activePath: AdminPathEnum.activePath,
         // roles: [RolesEnum.SUPER_ADMIN, RolesEnum.ADMIN],
     },
@@ -29,7 +29,7 @@ export const sidebarNavData = [
     {
         to: SettingPathEnum.path,
         text: SettingPathEnum.title,
-        icon: <FaFutbol />,
+        icon: ({ className }) => <FaFutbol className={className} />,
         activePath: SettingPathEnum.activePath,
         // roles: [RolesEnum.SUPER_ADMIN, RolesEnum.ADMIN, RolesEnum.MODERATOR],
     },

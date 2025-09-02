@@ -1,85 +1,55 @@
 import React from 'react';
 import { cn } from '@src/libs/helper';
 import SidebarItem from './SidebarItem';
-import { setMobileMenuOpen } from '@src/redux';
-import { sidebarNavData } from '@src/libs/data';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { imageStaticPath } from '@src/assets';
-import { FaXmark } from "react-icons/fa6";
+import { sidebarNavData } from '@src/libs/data';
 
-const Sidebar = ({ open }) => {
+const Sidebar = () => {
 
-    const dispatch = useDispatch();
-    const { user } = useSelector((state) => state.auth);
-    const { mobileMenuOpen } = useSelector((state) => state.global);
+    const { isDark, isSidebarOpen } = useSelector((state) => state.global);
 
     return (
         <>
             {/* Sidebar for large screens */}
             <div
                 className={cn(
-                    'h-screen relative duration-300 px-5 bg-main-black hidden lg:flex flex-col lg:w-[280px] overflow-y-auto message-scrollbar bg-lightDark border-r border-livid',
+                    isSidebarOpen ? 'xll:w-72 w-60' : 'w-20',
+                    isDark ? 'bg-lightDark' : 'bg-primary',
+                    'h-screen relative duration-300 pb-5 flex flex-col'
                 )}
-                style={{
-                    // boxShadow: "0 2px 15px rgb(0 0 0 / 0.7)",
-                }}
             >
-                <div className={cn('pt-4 flex items-center justify-center')}>
-                    <img src={imageStaticPath.logo} alt="logo" className='max-h-16 w-28' />
+
+                <div className={cn(
+                    'py-[1.12rem] flex gap-x-4 items-center border-b px-5',
+                    isSidebarOpen ? 'xll:py-[1.12rem] py-[1.30rem]' : 'xll:py-[0.62em] py-[0.80rem]'
+                )}>
+                    <img width={40} height={40} src={imageStaticPath.logo} alt="dashboard logo" className={cn(
+                        'cursor-pointer duration-500 xll:w-10 xll:h-10 w-8 h-8',
+                        isSidebarOpen && 'rotate-[360deg]'
+                    )} />
+                    <h1 className={cn(
+                        isDark ? 'text-gray-300' : 'text-white',
+                        'origin-left font-medium xll:text-xl duration-300 cursor-default',
+                        !isSidebarOpen && 'scale-0'
+                    )}>Brand Name</h1>
                 </div>
 
-                <ul className='flex flex-col gap-y-2 flex-grow list-none mt-6'>
+                <ul className='flex flex-col gap-y-2 flex-grow list-none mt-6 px-5'>
                     {sidebarNavData.slice(0, -1).map((menu, index) => (
                         <SidebarItem
                             key={`sidebar-item-${index}`}
                             index={index}
                             menu={menu}
-                            open={open}
+                            open={isSidebarOpen}
                         />
                     ))}
                 </ul>
 
-                <ul className="mt-auto list-none mb-6">
+                <ul className="mt-auto list-none mb-0 px-5">
                     <SidebarItem
                         menu={sidebarNavData[sidebarNavData.length - 1]}
-                        open={open}
-                    />
-                </ul>
-            </div>
-
-            {/* Sidebar for mobile screens */}
-            <div
-                className={cn(
-                    mobileMenuOpen ? 'translate-x-0' : '-translate-x-full',
-                    'fixed top-0 left-0 h-screen w-[252px] bg-main-black z-20 transition-transform duration-300 px-4 lg:hidden flex flex-col overflow-y-auto message-scrollbar bg-lightDark'
-                )}
-                style={{
-                    boxShadow: "2px 0 15px rgb(0 0 0 / 0.85)",
-                }}
-            >
-                <button className='outline-none absolute right-4 top-4' onClick={() => dispatch(setMobileMenuOpen(false))}>
-                    <FaXmark className='text-light-gray' size={20} />
-                </button>
-
-                <div className={cn('pt-10')}>
-                    <img src={imageStaticPath.logo} alt="logo" className='max-h-16 w-28' />
-                </div>
-
-                <ul className='flex flex-col gap-y-2 flex-grow list-none mt-8'>
-                    {sidebarNavData.slice(0, -1).map((menu, index) => (
-                        <SidebarItem
-                            key={`sidebar-Mobitem-${index}`}
-                            index={index}
-                            menu={menu}
-                            open={open}
-                        />
-                    ))}
-                </ul>
-
-                <ul className="list-none mb-4 mt-auto">
-                    <SidebarItem
-                        menu={sidebarNavData[sidebarNavData.length - 1]}
-                        open={open}
+                        open={isSidebarOpen}
                     />
                 </ul>
             </div>

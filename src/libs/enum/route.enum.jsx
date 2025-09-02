@@ -6,7 +6,7 @@ export const LoginPathEnum = {
 };
 
 export const DashboardPathEnum = {
-    path: "/panel",
+    path: "/panel/dashboard",
     activePath: "dashboard",
     subPath: "",
     title: "Dashboard",
