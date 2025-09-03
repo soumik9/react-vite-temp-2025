@@ -1,10 +1,10 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { CustomInput } from '@src/components';
+import { useNavigate } from 'react-router';
+import { FormInput } from '@src/components';
+import { DashboardPathEnum } from '@src/libs/enum';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginZodSchema } from '@src/libs/validation';
-import { useNavigate } from 'react-router';
-import { DashboardPathEnum } from '@src/libs/enum';
 
 const HomePage = () => {
 
@@ -34,7 +34,7 @@ const HomePage = () => {
                 {/* Form */}
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                     {/* Email */}
-                    <CustomInput
+                    <FormInput
                         label="Email"
                         type="email"
                         id="email"
@@ -43,15 +43,13 @@ const HomePage = () => {
                     />
 
                     {/* Password */}
-                    <div>
-                        <CustomInput
-                            label="Password"
-                            type="password"
-                            id="password"
-                            {...register("password")}
-                            error={errors.password?.message}
-                        />
-                    </div>
+                    <FormInput
+                        label="Password"
+                        type="password"
+                        id="password"
+                        {...register("password")}
+                        error={errors.password?.message}
+                    />
 
                     {/* Submit */}
                     <button

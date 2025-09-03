@@ -45,7 +45,7 @@ const ProfileDropdown = () => {
                     width={32}
                     height={32}
                     className="rounded-full object-cover w-8 h-8 cursor-pointer border-1 border-primary"
-                    src={imageStaticPath.logo}
+                    src={imageStaticPath.avatar}
                     onClick={() => handleToggleProfileDropdown(!isProfileDropdownOpen)}
                 />
 

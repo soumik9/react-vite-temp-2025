@@ -22,9 +22,9 @@ const Sidebar = () => {
 
                 <div className={cn(
                     'py-[1.12rem] flex gap-x-4 items-center border-b px-5',
-                    isSidebarOpen ? 'xll:py-[1.12rem] py-[1.30rem]' : 'xll:py-[0.62em] py-[0.80rem]'
+                    isSidebarOpen ? 'xl:py-[1.18rem] py-[1.30rem]' : 'xll:py-[0.62em] py-[0.80rem]'
                 )}>
-                    <img width={40} height={40} src={imageStaticPath.logo} alt="dashboard logo" className={cn(
+                    <img src={imageStaticPath.logo} alt="dashboard logo" className={cn(
                         'cursor-pointer duration-500 xll:w-10 xll:h-10 w-8 h-8',
                         isSidebarOpen && 'rotate-[360deg]'
                     )} />
@@ -32,7 +32,9 @@ const Sidebar = () => {
                         isDark ? 'text-gray-300' : 'text-white',
                         'origin-left font-medium xll:text-xl duration-300 cursor-default',
                         !isSidebarOpen && 'scale-0'
-                    )}>{brandName}</h1>
+                    )}>
+                        {brandName}
+                    </h1>
                 </div>
 
                 <ul className='flex flex-col gap-y-2 flex-grow list-none mt-6 px-5'>

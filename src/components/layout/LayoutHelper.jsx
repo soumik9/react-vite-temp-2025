@@ -1,9 +1,9 @@
 import React from 'react';
+import { Footer } from './footer';
 import { Header } from './header';
+import { Link } from 'react-router';
 import { cn } from '@src/libs/helper';
 import { FaAngleRight } from "react-icons/fa6";
-import { Link } from 'react-router';
-import { Footer } from './footer';
 
 const LayoutHelper = ({ children, links, mobileHandler }) => {
     return (

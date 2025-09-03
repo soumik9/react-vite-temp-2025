@@ -1,4 +1,5 @@
 export const imageStaticPath = {
-    logo: "/logo.svg",
+    logo: "/logo.png",
+    avatar: "/logo.jpg",
     error404: "/images/error-404.jpg",
 }

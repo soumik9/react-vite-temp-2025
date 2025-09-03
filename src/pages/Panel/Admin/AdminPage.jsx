@@ -1,10 +1,11 @@
-import React from 'react';
+import { LayoutHelper } from '@src/components';
+import { AdminPathEnum, DashboardPathEnum } from '@src/libs/enum';
 
 const AdminPage = () => {
     return (
-        <div>
+        <LayoutHelper links={[DashboardPathEnum, AdminPathEnum]}>
 
-        </div>
+        </LayoutHelper>
     );
 };
 

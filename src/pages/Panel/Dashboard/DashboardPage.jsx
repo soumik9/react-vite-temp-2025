@@ -1,17 +1,10 @@
 import { LayoutHelper } from '@src/components';
 import { DashboardPathEnum } from '@src/libs/enum';
-import React from 'react';
 
 const DashboardPage = () => {
     return (
         <LayoutHelper links={[DashboardPathEnum]}>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="6" y="6" width="8" height="8" rx="2" fill="#f2f2f2" stroke="#22223b" stroke-width="2" />
-                <rect x="26" y="6" width="8" height="8" rx="2" fill="#f2f2f2" stroke="#22223b" stroke-width="2" />
-                <rect x="6" y="26" width="8" height="8" rx="2" fill="#f2f2f2" stroke="#22223b" stroke-width="2" />
-                <rect x="26" y="26" width="8" height="8" rx="2" fill="#f2f2f2" stroke="#22223b" stroke-width="2" />
-                <circle cx="20" cy="20" r="5" fill="#d4a373" stroke="#22223b" stroke-width="2" />
-            </svg>
+
         </LayoutHelper>
     );
 };

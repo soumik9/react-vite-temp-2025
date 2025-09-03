@@ -1,7 +1,6 @@
 import { cn } from '@src/libs/helper';
-import React from 'react';
 
-const CustomInput = ({
+const FormInput = ({
     label, type = "text", error, id, ...props
 }) => {
     return (
@@ -30,4 +29,4 @@ const CustomInput = ({
     );
 };
 
-export default CustomInput;
+export default FormInput;
