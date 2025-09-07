@@ -2,23 +2,37 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router';
 import { FormInput } from '@src/components';
-import { DashboardPathEnum } from '@src/libs/enum';
+import { DashboardPathEnum, LocalStorageKeyEnum } from '@src/libs/enum';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginZodSchema } from '@src/libs/validation';
+import { setCredential, useLoginMutation } from '@src/redux';
+import { errorNotify, setLocalStorage, successNotify } from '@src/libs/helper';
 
 const HomePage = () => {
 
     const navigate = useNavigate();
+    const [login, { isLoading }] = useLoginMutation();
+
     const { register, handleSubmit, formState: { errors }, } = useForm({
         resolver: zodResolver(LoginZodSchema),
         defaultValues: {
-            email: "", password: "",
+            phone: "", password: "",
         },
     });
 
     const onSubmit = (data) => {
-        console.log("Login submitted:", data);
-        navigate(DashboardPathEnum.path);
+        login({ ...data, password: data.password.trim() }).unwrap()
+            .then((response) => {
+                if (response?.access_token) {
+                    const { access_token, ...rest } = response;
+                    setLocalStorage(LocalStorageKeyEnum.Auth, { user: rest, accessToken: access_token });
+                    dispatch(setCredential({ user: rest, accessToken: access_token }));
+                    successNotify("Login successful");
+                    navigate(DashboardPathEnum.path);
+                }
+            }).catch((err) => {
+                errorNotify(err?.data?.message);
+            });
     };
 
     return (
@@ -33,13 +47,13 @@ const HomePage = () => {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                    {/* Email */}
+                    {/* phone number */}
                     <FormInput
-                        label="Email"
-                        type="email"
-                        id="email"
-                        {...register("email")}
-                        error={errors.email?.message}
+                        label="Phone Number"
+                        type="number"
+                        id="phone"
+                        {...register("phone")}
+                        error={errors.phone?.message}
                     />
 
                     {/* Password */}
@@ -59,14 +73,6 @@ const HomePage = () => {
                         Login
                     </button>
                 </form>
-
-                {/* Footer */}
-                <p className="mt-6 text-sm text-silver text-center">
-                    Don’t have an account?{" "}
-                    <a href="/register" className="text-livid hover:underline">
-                        Sign Up
-                    </a>
-                </p>
             </div>
         </div>
     );
