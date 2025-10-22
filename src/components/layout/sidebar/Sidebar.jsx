@@ -15,7 +15,7 @@ const Sidebar = () => {
             <div
                 className={cn(
                     isSidebarOpen ? 'xll:w-72 w-60' : 'w-20',
-                    isDark ? 'bg-lightDark' : 'bg-primary',
+                    isDark ? 'bg-lightDark' : 'bg-success-900',
                     'h-screen relative duration-300 pb-5 flex flex-col'
                 )}
             >
